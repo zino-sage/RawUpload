@@ -1,0 +1,148 @@
+<div class="container-fluid">
+  <div class="panel-body">
+    <div class="col-md-12">
+      <div class="row-md-3">
+
+        <a href="../assets/RawUploadSample.xlsx" target="_blank" class="btn btn-sm btn-primary pull-right">
+          <span class="glyphicon glyphicon-download"></span> Download Sample</a>
+
+        <button class="btn btn-sm btn-danger pull-left" (click)="resetForm(); fileInput.value=''">
+          <span class="glyphicon glyphicon-upload"></span> Reset Upload Content </button>
+
+      </div>
+
+    </div>
+
+    <div class="form-group col-md-12">
+      <div class="col-md-12">
+        <input type="file" (change)="onFileChange($event)" placeholder="Upload file"
+          [accept]="'.xslx, .xlsx, .csv, .xltx'" #fileInput name="fileInput" style="padding-top:2px;"
+          class="form-control">
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <div class="col-md-6">
+        <button class="btn btn-sm btn-success pull-left" (click)="uploadFile(); fileInput.value=''">
+          <span class="glyphicon glyphicon-upload"></span> Run Upload </button>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="panel-body">
+            <div class="form-horizontal">
+              <div class="form-group">
+                <label for="" class="control-label col-md-12">All Numbers Divisible by 2</label>
+                <div class="col-md-12 no-data-div">
+                  <input type="text" formControlName="divisibleBy2" name="divisibleBy2"
+                    [ngClass]="!resultForm.controls['divisibleBy2'].valid ? 'required-input' : 'valid-input'"
+                    class="form-control">
+                </div>
+                <label for="" class="control-label col-md-12">All Numbers Divisible by 7</label>
+                <div class="col-md-12 no-data-div">
+                  <input type="text" formControlName="divisibleBy7" name="divisibleBy7"
+                    [ngClass]="!resultForm.controls['divisibleBy7'].valid ? 'required-input' : 'valid-input'"
+                    class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="" class="control-label col-md-12">All Numbers Divisible by 3</label>
+                <div class="col-md-12 no-data-div">
+                  <input type="text" formControlName="divisibleBy3" name="divisibleBy3"
+                    [ngClass]="!resultForm.controls['divisibleBy3'].valid ? 'required-input' : 'valid-input'"
+                    class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <label for="" class="control-label col-md-6">Mode </label>
+
+                  <label for="" class="control-label col-md-6">Median </label>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 no-data-div">
+                    <input type="text" formControlName="mode"
+                      [ngClass]="!resultForm.controls['mode'].valid ? 'required-input' : 'valid-input'"
+                      formatM name="mode" class="form-control">
+                  </div>
+
+                  <div class="col-md-6 no-data-div">
+                    <input type="text" formatM formControlName="median" name="median"
+                      [ngClass]="!resultForm.controls['median'].valid ? 'required-input' : 'valid-input'"
+                      class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="" class="control-label col-md-12">Shortest Sum to 65</label>
+                <div class="col-md-12 no-data-div">
+                  <input type="text" formControlName="sumTo65"
+                    [ngClass]="!resultForm.controls['sumTo65'].valid ? 'required-input' : 'valid-input'" formatM
+                    name="sumTo65" class="form-control">
+                </div>
+                <label for="" class="control-label col-md-12">Shortest Sum to 35</label>
+                <div class="col-md-12 no-data-div">
+                  <input type="text" formControlName="sumTo35" name="sumTo35"
+                    [ngClass]="!resultForm.controls['sumTo35'].valid ? 'required-input' : 'valid-input'"
+                    class="form-control">
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-horizontal">
+            <div class="form-group">
+              <label for="" class="control-label col-md-12">Sum of All Odd Numbers</label>
+              <div class="col-md-6 no-data-div">
+                <input type="text" formControlName="oddNumberSum" name="oddNumberSum"
+                  [ngClass]="!resultForm.controls['oddNumberSum'].valid ? 'required-input' : 'valid-input'"
+                  class="form-control" >
+              </div>
+              <label for="" class="control-label col-md-12">Sum of All Even Numbers</label>
+              <div class="col-md-6 no-data-div">
+                <input type="text" formControlName="evenNumberSum" name="evenNumberSum"
+                  [ngClass]="!resultForm.controls['evenNumberSum'].valid ? 'required-input' : 'valid-input'"
+                  class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group ">
+              <label for="" class="control-label col-md-12">Sum of All Single Digit Numbers</label>
+              <div class="col-md-6 no-data-div">
+                <input type="text" formControlName="singleDigitSum" name="singleDigitSum"
+                  [ngClass]="!resultForm.controls['singleDigitSum'].valid ? 'required-input' : 'valid-input'"
+                  class="form-control">
+              </div>
+
+              <label for="" class="control-label col-md-12">Sum Of All Double Digit Numbers</label>
+              <div class="col-md-6 no-data-div">
+                <input type="text" formControlName="doubleDigitSum" name="doubleDigitSum"
+                  [ngClass]="!resultForm.controls['doubleDigitSum'].valid ? 'required-input' : 'valid-input'"
+                  class="form-control">
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
